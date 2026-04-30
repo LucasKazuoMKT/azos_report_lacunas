@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inside Sales · Fluxo, dores e proposta · 8 mai 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF6;
+    --bg-2: #F2F1EA;
+    --bg-card: #FFFFFF;
+    --green: #00875F;
+    --green-dark: #003F2D;
+    --green-deeper: #001F16;
+    --green-soft: #C5E7DA;
+    --green-mist: #E8F4EE;
+    --ink: #0F1A18;
+    --ink-mid: #4A5552;
+    --ink-soft: #6B7472;
+    --line: #E5E2D9;
+    --line-strong: #CFCDC4;
+    --gap: #B33A2D;
+    --gap-soft: #FBEAE7;
+    --warn: #C97A1F;
+    --warn-soft: #FBF0DD;
+    --display: 'Archivo', sans-serif;
+    --body: 'Inter', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.55; }
+  body { padding: 50px 5vw 100px; }
+  .wrap { max-width: 1140px; margin: 0 auto; }
+
+  /* ─── Header ─── */
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 30px;
+    padding-bottom: 28px;
+    border-bottom: 2px solid var(--green-dark);
+    margin-bottom: 40px;
+  }
+  .brand-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .a-mark {
+    width: 38px; height: 38px;
+    background: var(--green-dark);
+    color: var(--bg);
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -0.04em;
+    border-radius: 2px;
+  }
+  .brand-row .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(44px, 6vw, 76px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: var(--green-deeper);
+  }
+  h1 .accent { color: var(--green); }
+  h1 .thin { font-weight: 400; }
+  .meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    text-align: right;
+    line-height: 1.8;
+  }
+  .meta b { color: var(--ink); font-weight: 600; }
+  .meta .lbl { color: var(--ink-soft); opacity: 0.7; }
+
+  /* ─── Audience banner ─── */
+  .audience {
+    background: var(--green-deeper);
+    color: var(--bg);
+    padding: 28px 36px;
+    margin-bottom: 56px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .audience .pill {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    background: var(--green);
+    color: var(--bg);
+    padding: 6px 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .audience p { font-family: var(--body); font-size: 15px; line-height: 1.5; color: var(--bg); margin: 0; }
+  .audience strong { color: var(--green-soft); font-weight: 600; }
+
+  /* ─── TL;DR ─── */
+  .tldr {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--green);
+    padding: 32px 36px;
+    margin-bottom: 80px;
+    position: relative;
+  }
+  .tldr h2 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--green);
+    margin-bottom: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .tldr p {
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .tldr p strong { color: var(--green-dark); font-weight: 800; }
+  .tldr p + p { margin-top: 14px; }
+
+  /* ─── Sections ─── */
+  section { margin-bottom: 80px; }
+  .section-head {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-num {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 38px;
+    color: var(--green);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(28px, 3vw, 40px);
+    color: var(--green-deeper);
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+  }
+  h2 .accent { color: var(--green); font-weight: 800; }
+  .section-body { padding-left: 104px; }
+  @media (max-width: 768px) {
+    .section-head { grid-template-columns: 1fr; gap: 6px; }
+    .section-body { padding-left: 0; }
+  }
+  h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--green-dark);
+    margin: 32px 0 14px;
+  }
+  h3:first-child { margin-top: 0; }
+  p { margin-bottom: 14px; color: var(--ink); }
+  p.lead { font-size: 18px; color: var(--ink); margin-bottom: 24px; line-height: 1.55; }
+  strong { color: var(--green-dark); font-weight: 700; }
+  em { color: var(--ink-mid); font-style: italic; }
+  a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--green-soft); }
+
+  /* ─── Diagram container ─── */
+  .diagram {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    padding: 36px 28px;
+    margin: 24px 0;
+    overflow-x: auto;
+    border-radius: 2px;
+  }
+  .diagram-caption {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* ─── Cards ─── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 20px 0; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0; }
+  @media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    padding: 22px;
+    position: relative;
+    border-radius: 2px;
+  }
+  .card .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--green);
+    margin-bottom: 8px;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+  }
+  .card h4 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 19px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    color: var(--green-deeper);
+    letter-spacing: -0.01em;
+  }
+  .card p { font-size: 13.5px; color: var(--ink-mid); margin-bottom: 0; line-height: 1.5; }
+  .card.accent { border-left: 3px solid var(--green); }
+  .card.warn { border-left: 3px solid var(--warn); }
+  .card.gap { border-left: 3px solid var(--gap); }
+
+  /* ─── Metric ─── */
+  .metric {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    padding: 22px;
+    border-top: 3px solid var(--green);
+    border-radius: 2px;
+  }
+  .metric .val {
+    font-family: var(--display);
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    color: var(--green-deeper);
+    margin-bottom: 8px;
+  }
+  .metric .lbl {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .metric.warn { border-top-color: var(--warn); }
+  .metric.gap { border-top-color: var(--gap); }
+  .metric.gap .val { color: var(--gap); }
+  .metric.warn .val { color: var(--warn); }
+
+  /* ─── Callouts ─── */
+  .callout {
+    background: var(--gap-soft);
+    border-left: 3px solid var(--gap);
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 2px;
+  }
+  .callout.warn { background: var(--warn-soft); border-left-color: var(--warn); }
+  .callout.green { background: var(--green-mist); border-left-color: var(--green); }
+  .callout p { margin: 0; font-size: 14px; color: var(--ink); }
+  .callout p + p { margin-top: 8px; }
+  .callout .head {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gap);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .callout.warn .head { color: var(--warn); }
+  .callout.green .head { color: var(--green-dark); }
+
+  /* ─── Tables ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+  }
+  th, td {
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  th {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    font-weight: 700;
+    background: var(--bg-2);
+  }
+  td.mono { font-family: var(--mono); font-size: 12px; color: var(--ink-mid); }
+  td strong { color: var(--green-deeper); }
+
+  .pill {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 3px 9px;
+    border: 1px solid currentColor;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+  .pill.gap { color: var(--gap); }
+  .pill.ok { color: var(--green); }
+  .pill.warn { color: var(--warn); }
+  .pill.new { color: var(--green-dark); background: var(--green-soft); border-color: var(--green-soft); }
+
+  /* ─── Frente cards (3 frentes) ─── */
+  .frente {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    padding: 26px;
+    margin-bottom: 16px;
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  @media (max-width: 768px) {
+    .frente { grid-template-columns: 1fr; }
+  }
+  .frente .frente-head {
+    border-right: 1px solid var(--line);
+    padding-right: 24px;
+  }
+  @media (max-width: 768px) {
+    .frente .frente-head { border-right: none; border-bottom: 1px solid var(--line); padding-right: 0; padding-bottom: 16px; }
+  }
+  .frente-head .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--green);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .frente-head h4 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--green-deeper);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .frente-head .source {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+  .frente-body .row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 13.5px;
+  }
+  .frente-body .row:last-child { border-bottom: none; }
+  .frente-body .row b {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-top: 2px;
+  }
+  .frente-body .quote {
+    font-style: italic;
+    color: var(--ink-mid);
+    padding-left: 8px;
+    border-left: 2px solid var(--green-soft);
+  }
+
+  /* ─── Stage progression ─── */
+  .stages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 24px 0;
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+  }
+  @media (max-width: 768px) {
+    .stages { grid-template-columns: 1fr; }
+  }
+  .stage {
+    padding: 24px;
+    border-right: 1px solid var(--line);
+    position: relative;
+  }
+  .stage:last-child { border-right: none; }
+  @media (max-width: 768px) {
+    .stage { border-right: none; border-bottom: 1px solid var(--line); }
+    .stage:last-child { border-bottom: none; }
+  }
+  .stage .heat {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+  .stage:nth-child(1) .heat { background: var(--green-soft); }
+  .stage:nth-child(2) .heat { background: var(--warn); }
+  .stage:nth-child(3) .heat { background: var(--gap); }
+  .stage .step-name {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    margin-top: 8px;
+  }
+  .stage h5 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--green-deeper);
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+  }
+  .stage ul { list-style: none; padding: 0; margin: 0; }
+  .stage ul li {
+    font-size: 13px;
+    color: var(--ink-mid);
+    padding: 4px 0;
+    padding-left: 14px;
+    position: relative;
+  }
+  .stage ul li:before {
+    content: "─";
+    position: absolute;
+    left: 0;
+    color: var(--green);
+  }
+  .stages-caption {
+    text-align: center;
+    font-family: var(--display);
+    font-style: italic;
+    color: var(--green);
+    font-size: 16px;
+    margin: 18px 0;
+    font-weight: 500;
+  }
+
+  /* ─── Steps list ─── */
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+  }
+  .steps li {
+    counter-increment: step;
+    padding: 14px 0 14px 60px;
+    position: relative;
+    border-bottom: 1px dashed var(--line);
+    font-size: 14px;
+  }
+  .steps li:last-child { border-bottom: none; }
+  .steps li:before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--green);
+    letter-spacing: -0.02em;
+  }
+  .steps li strong { display: block; color: var(--green-deeper); margin-bottom: 4px; font-size: 15px; }
+  .steps li span { color: var(--ink-mid); font-size: 13.5px; }
+
+  /* ─── Pain table ─── */
+  .pains {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    margin: 18px 0;
+  }
+  .pain-group {
+    padding: 22px 26px;
+    border-bottom: 1px solid var(--line);
+  }
+  .pain-group:last-child { border-bottom: none; }
+  .pain-group h4 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--green-deeper);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .pain-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  @media (max-width: 768px) {
+    .pain-list { grid-template-columns: 1fr; }
+  }
+  .pain-list li {
+    padding: 10px 0;
+    padding-left: 28px;
+    position: relative;
+    font-size: 13.5px;
+    color: var(--ink-mid);
+    line-height: 1.45;
+    border-bottom: 1px dashed var(--line);
+  }
+  .pain-list li:before {
+    content: "✕";
+    position: absolute;
+    left: 0; top: 10px;
+    color: var(--gap);
+    font-weight: 700;
+  }
+  .pain-list li strong { color: var(--ink); display: block; margin-bottom: 2px; font-weight: 600; }
+
+  /* ─── Glossary ─── */
+  .stack-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 28px;
+    padding: 22px 0;
+    border-bottom: 1px dashed var(--line);
+    align-items: start;
+  }
+  .stack-item:last-child { border-bottom: none; }
+  .stack-name {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--green-deeper);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .stack-name .role {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 600;
+    margin-top: 6px;
+  }
+  .stack-desc { font-size: 14px; color: var(--ink); line-height: 1.55; }
+  .stack-desc .analogy { color: var(--ink-soft); font-style: italic; display: block; margin-top: 6px; }
+  @media (max-width: 768px) {
+    .stack-item { grid-template-columns: 1fr; gap: 6px; }
+  }
+
+  /* ─── Proposal split ─── */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 24px 0;
+    border: 1px solid var(--line);
+  }
+  @media (max-width: 768px) { .split { grid-template-columns: 1fr; } }
+  .split-side {
+    padding: 28px;
+    background: var(--bg-card);
+  }
+  .split-side.tech { background: var(--green-deeper); color: var(--bg); }
+  .split-side.tech h5 { color: var(--bg); }
+  .split-side.tech .tag-strip { background: var(--green); color: var(--bg); }
+  .split-side.lucas { background: var(--green-mist); }
+  .split-side .tag-strip {
+    display: inline-block;
+    background: var(--green-deeper);
+    color: var(--bg);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .split-side h5 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 26px;
+    color: var(--green-deeper);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  .split-side ul { list-style: none; padding: 0; }
+  .split-side ul li {
+    padding: 10px 0 10px 22px;
+    position: relative;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    line-height: 1.4;
+  }
+  .split-side.tech ul li { border-bottom-color: rgba(255,255,255,0.1); color: var(--green-soft); }
+  .split-side ul li:last-child { border-bottom: none; }
+  .split-side ul li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--green);
+  }
+  .split-side.tech ul li:before { color: var(--green-soft); }
+  .split-side ul li strong { display: block; color: var(--ink); margin-bottom: 2px; font-size: 14.5px; font-weight: 700; }
+  .split-side.tech ul li strong { color: var(--bg); }
+
+  /* ─── Question list ─── */
+  .questions { counter-reset: q; list-style: none; padding: 0; }
+  .questions li {
+    counter-increment: q;
+    position: relative;
+    padding: 18px 0 18px 60px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .questions li:before {
+    content: "Q" counter(q, decimal-leading-zero);
+    position: absolute;
+    left: 0; top: 20px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--green);
+    letter-spacing: 0.1em;
+    font-weight: 700;
+  }
+  .questions li strong { display: block; color: var(--green-deeper); font-family: var(--display); font-weight: 700; font-size: 17px; margin-bottom: 6px; line-height: 1.25; letter-spacing: -0.01em; }
+  .questions li span { font-size: 13.5px; color: var(--ink-mid); }
+
+  /* ─── Checklist ─── */
+  .checklist { list-style: none; padding: 0; margin: 16px 0; }
+  .checklist li {
+    padding: 12px 18px;
+    border: 1px solid var(--line);
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--bg-card);
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 12px;
+    align-items: center;
+  }
+  .checklist li:before {
+    content: "";
+    width: 18px; height: 18px;
+    border: 2px solid var(--green-dark);
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  /* ─── People ─── */
+  .people-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 18px 0;
+  }
+  @media (max-width: 768px) { .people-row { grid-template-columns: 1fr; } }
+  .person {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    padding: 20px;
+    border-top: 3px solid var(--green);
+  }
+  .person .name {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    color: var(--green-deeper);
+    letter-spacing: -0.02em;
+  }
+  .person .role {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .person .obs {
+    font-size: 12.5px;
+    color: var(--ink-mid);
+    line-height: 1.5;
+  }
+
+  /* ─── Volume bar ─── */
+  .volume-bar {
+    display: flex;
+    height: 60px;
+    margin: 18px 0;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    background: var(--bg-card);
+  }
+  .volume-bar .seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 6px;
+    color: var(--bg);
+    font-family: var(--display);
+    font-weight: 700;
+    text-align: center;
+  }
+  .volume-bar .seg .pct { font-size: 18px; line-height: 1; }
+  .volume-bar .seg .nm { font-size: 10px; font-family: var(--mono); letter-spacing: 0.05em; opacity: 0.85; margin-top: 4px; font-weight: 500; }
+  .volume-bar .s1 { background: var(--green); flex: 32; }
+  .volume-bar .s2 { background: var(--green-dark); flex: 37; }
+  .volume-bar .s3 { background: var(--ink-mid); flex: 31; }
+
+  /* ─── Footer ─── */
+  footer {
+    margin-top: 80px;
+    padding: 24px 0;
+    border-top: 2px solid var(--green-dark);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer .left { color: var(--green-dark); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ═══════════════════════════════════════ -->
+<!-- HEADER                                   -->
+<!-- ═══════════════════════════════════════ -->
+<header>
+  <div>
+    <div class="brand-row">
+      <div class="a-mark">A</div>
+      <div class="label">AZOS · GROWTH · BRIEFING INTERNO</div>
+    </div>
+    <div class="eyebrow">Reunião 8 mai 2026 · Time Giovanni</div>
+    <h1><span class="thin">Inside Sales:</span><br><span class="accent">fluxo, dores</span> e proposta de ataque.</h1>
+  </div>
+  <div class="meta">
+    <div><span class="lbl">Data</span> &nbsp; 30 abr 2026</div>
+    <div><span class="lbl">Por</span> &nbsp; <b>Lucas K. N. Uzita</b></div>
+    <div><span class="lbl">Para</span> &nbsp; <b>Time Giovanni</b></div>
+    <div><span class="lbl">Insumos</span> &nbsp; Reunião Amanda 30/04</div>
+    <div><span class="lbl">Versão</span> &nbsp; v3</div>
+  </div>
+</header>
+
+<!-- AUDIENCE -->
+<div class="audience">
+  <span class="pill">↳ Contexto</span>
+  <p>Este documento consolida o que foi mapeado e validado na reunião com a <strong>Amanda Moran (30/04)</strong>, cruzado com o deck operacional de Inside Sales e a leitura de Slack/Wiki. O objetivo da reunião do <strong>dia 8/05</strong> é alinhar o quadro completo de dores e propor a divisão de entregas: o que sai pelo time técnico e o que fica comigo no Growth.</p>
+</div>
+
+<!-- TL;DR -->
+<div class="tldr">
+  <h2>TL;DR</h2>
+  <p>Inside Sales hoje é <strong>3 analistas para ~100 leads/dia</strong>, três frentes desconectadas (Hubspot · WhatsApp · Recuperação) e um fluxo manual sustentado por planilha. Resultado: <strong>9+ minutos</strong> de tempo de resposta no WhatsApp, ciclo de venda de até <strong>uma semana</strong>, leads duplicados e conflito de atribuição entre vendedores.</p>
+  <p>Proposta para a reunião: time técnico assume <strong>chatbot fora do horário</strong> e <strong>mensagens ativas</strong>; Growth (Lucas) assume <strong>unificação de leads</strong>, <strong>fila inteligente</strong> e <strong>dashboard de IS</strong>.</p>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- §01 NÚMEROS                              -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div class="section-num">01</div>
+    <h2>Os números que <span class="accent">ancoram</span> a conversa</h2>
+  </div>
+  <div class="section-body">
+    <p class="lead">A grandeza do gargalo. Reunião Amanda 30/04 + apresentação operacional B2C.</p>
+
+    <h3>Carga operacional do time</h3>
+    <div class="grid-4">
+      <div class="metric"><div class="val">~100</div><div class="lbl">Leads / dia</div></div>
+      <div class="metric"><div class="val">3</div><div class="lbl">Analistas</div></div>
+      <div class="metric warn"><div class="val">9+ min</div><div class="lbl">Resp. WhatsApp</div></div>
+      <div class="metric warn"><div class="val">~1 sem</div><div class="lbl">Ciclo de venda</div></div>
+    </div>
+
+    <h3>Performance B2C — visão macro</h3>
+    <div class="grid-4">
+      <div class="metric"><div class="val">R$ 870K</div><div class="lbl">Prêmio B2C 2026 (proj.)</div></div>
+      <div class="metric"><div class="val">R$ 85K</div><div class="lbl">Prêmio mensal IS</div></div>
+      <div class="metric"><div class="val">R$ 336K</div><div class="lbl">Mídia / mês</div></div>
+      <div class="metric"><div class="val">2,3 %</div><div class="lbl">Conv. simulação → apólice</div></div>
+    </div>
+
+    <h3>O ruído de fundo das recusas</h3>
+    <div class="grid-3">
+      <div class="metric gap"><div class="val">30 %</div><div class="lbl">Recusa de propostas</div></div>
+      <div class="metric warn"><div class="val">34 %</div><div class="lbl">Recusas reversíveis</div></div>
+      <div class="metric warn"><div class="val">15 %</div><div class="lbl">Reversíveis recuperadas</div></div>
+    </div>
+
+    <div class="callout">
+      <div class="head">↳ Atenção · Qualidade de dados</div>
+      <p>O canal <span class="mono" style="font-family:var(--mono);">#dados-analytics</span> identificou <strong>3 valores distintos</strong> para o prêmio B2C de jan/2026 dependendo da tabela consultada (<span class="mono" style="font-family:var(--mono);">ft_status_apolices</span> vs <span class="mono" style="font-family:var(--mono);">ft_contratacoes_apolices</span>). Antes de subir um dashboard, alinhar com dados qual tabela é a verdade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- §02 AS 3 FRENTES                         -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div class="section-num">02</div>
+    <h2>As <span class="accent">três frentes</span> de novos leads</h2>
+  </div>
+  <div class="section-body">
+    <p class="lead">Cada frente entra por um caminho diferente, com nível diferente de informação e abordagem específica. Volume de conversões medido em julho:</p>
+
+    <div class="volume-bar">
+      <div class="seg s1"><span class="pct">32 %</span><span class="nm">Simule Agora</span></div>
+      <div class="seg s2"><span class="pct">37 %</span><span class="nm">WhatsApp</span></div>
+      <div class="seg s3"><span class="pct">~31 %</span><span class="nm">Outros · formulários · recuperação</span></div>
+    </div>
+
+    <!-- Frente 1 -->
+    <div class="frente">
+      <div class="frente-head">
+        <div class="tag">Frente 01</div>
+        <h4>Abandono Hubspot</h4>
+        <div class="source">Simulação · Carrinho · Checkout</div>
+      </div>
+      <div class="frente-body">
+        <div class="row"><b>Origem</b><span>Lead acessou o site, simulou e não concluiu a contratação. API gera negócio automaticamente no HubSpot e atribui aleatoriamente a um proprietário.</span></div>
+        <div class="row"><b>UTM?</b><span><span class="pill ok">Sim</span> &nbsp;<em>UTM Source preservada</em></span></div>
+        <div class="row"><b>Volume</b><span>32 % das conversões (jul/2025)</span></div>
+        <div class="row"><b>Abordagem</b><span class="quote">"Vimos que você iniciou uma contratação, porém não concluiu. Ficou com alguma dúvida ou insegurança? O que posso ajudar?"</span></div>
+      </div>
+    </div>
+
+    <!-- Frente 2 -->
+    <div class="frente">
+      <div class="frente-head">
+        <div class="tag">Frente 02</div>
+        <h4>WhatsApp · Zendesk</h4>
+        <div class="source">Lead inbound direto</div>
+      </div>
+      <div class="frente-body">
+        <div class="row"><b>Origem</b><span>Lead clica no CTA "Quero falar com especialista" no site e cai diretamente no Zendesk via WhatsApp Corporativo. <em>Não passa pelo HubSpot</em>.</span></div>
+        <div class="row"><b>UTM?</b><span><span class="pill gap">Não</span> &nbsp;<em>Sem rastreamento de origem</em></span></div>
+        <div class="row"><b>Volume</b><span>37 % das conversões (jul/2025) · maior taxa de conexão e conversão</span></div>
+        <div class="row"><b>Abordagem</b><span class="quote">"Olá, meu nome é [analista]. Sou especialista da Azos e vou te auxiliar na contratação."</span></div>
+        <div class="row"><b>Dor</b><span>Toda a simulação é construída do zero com o especialista — <strong>nada de informação prévia sobre o lead</strong>. Volume mais alto e o que mais demanda do time.</span></div>
+      </div>
+    </div>
+
+    <!-- Frente 3 -->
+    <div class="frente">
+      <div class="frente-head">
+        <div class="tag">Frente 03</div>
+        <h4>Recuperação</h4>
+        <div class="source">Recusas reversíveis</div>
+      </div>
+      <div class="frente-body">
+        <div class="row"><b>Origem</b><span>Cliente já gerou proposta, foi recusado, mas o caso é reversível. Time da subscrição (Daniel/Hugo/Gabriel notificados via Integração UW no <span class="mono" style="font-family:var(--mono);">#inside-sales-análise</span>).</span></div>
+        <div class="row"><b>UTM?</b><span><span class="pill warn">Depende</span> &nbsp;<em>Origem varia conforme canal de entrada original</em></span></div>
+        <div class="row"><b>Abordagem</b><span class="quote">"Olá, sou especialista da Azos. Infelizmente sua primeira proposta foi recusada pela seguradora parceira, mas estou aqui para te auxiliar na nova proposta."</span></div>
+      </div>
+    </div>
+
+    <h3>Time atual</h3>
+    <div class="people-row">
+      <div class="person">
+        <div class="name">Daniel Martins</div>
+        <div class="role">Analista IS</div>
+        <div class="obs">Proprietário em maior volume de propostas observadas em abril/26. Atende via Zendesk e WhatsApp Corporativo.</div>
+      </div>
+      <div class="person">
+        <div class="name">Hugo Ribeiro</div>
+        <div class="role">Analista IS</div>
+        <div class="obs">Aparece consistente nas notificações de recuperação. Confirmar com Amanda se é o ponto focal do time.</div>
+      </div>
+      <div class="person">
+        <div class="name">Gabriel Bertholdo</div>
+        <div class="role">Analista IS</div>
+        <div class="obs">Proprietário identificado em propostas via Zendesk em abr/26.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- §03 ESTÁGIOS                             -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div class="section-num">03</div>
+    <h2>O lead por <span class="accent">estágio</span></h2>
+  </div>
+  <div class="section-body">
+    <p class="lead">Dentro de cada frente, o lead tem temperatura diferente conforme avança no funil. Quanto mais avançado, mais informação temos — e mais quente está.</p>
+
+    <div class="stages">
+      <div class="stage">
+        <div class="heat"></div>
+        <div class="step-name">Estágio 01</div>
+        <h5>Lead Simulação</h5>
+        <ul>
+          <li>Data de nascimento</li>
+          <li>Altura · peso · fumante</li>
+          <li>Sexo · nome · e-mail · telefone</li>
+          <li>Coberturas e capitais simulados</li>
+          <li>Valor estimado da mensalidade</li>
+          <li>UTM source</li>
+          <li><em>Recebeu apenas e-mail de cotação</em></li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="heat"></div>
+        <div class="step-name">Estágio 02</div>
+        <h5>Lead Carrinho</h5>
+        <ul>
+          <li>Tudo do Simulação +</li>
+          <li>Resultado DPS Morte</li>
+          <li>Resultado DPS DG 13</li>
+          <li>Resultado DPS Invalidez</li>
+          <li>Valor estimado final</li>
+          <li><em>Pode-se vender · Atenção: cobertura "Recusada" não pode ser ofertada</em></li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="heat"></div>
+        <div class="step-name">Estágio 03</div>
+        <h5>Lead Checkout</h5>
+        <ul>
+          <li>Tudo do Carrinho +</li>
+          <li>Método de pagamento (PIX ou cartão)</li>
+          <li><em>Pode ou não ter assinado a proposta — verificar Clicksign</em></li>
+        </ul>
+      </div>
+    </div>
+    <div class="stages-caption">→ quanto mais avançado, mais quente</div>
+
+    <div class="callout warn">
+      <div class="head">↳ Detalhe técnico · DPS</div>
+      <p>A DPS é o questionário de saúde com <strong>~30 perguntas</strong>. O resultado por cobertura (Morte · DG 13 · Invalidez) determina o que pode ou não ser ofertado naquele lead. Hoje os analistas <strong>não têm acesso completo às respostas</strong> — apenas ao resultado agregado por cobertura.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- §04 FLUXO DO ANALISTA                    -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div class="section-num">04</div>
+    <h2>O fluxo <span class="accent">real</span> do analista</h2>
+  </div>
+  <div class="section-body">
+    <p class="lead">O que acontece entre o lead chegar e a venda fechar — passo a passo, sustentado por planilha.</p>
+
+    <h3>Antes de tentar contato — três verificações obrigatórias</h3>
+    <ol class="steps">
+      <li>
+        <strong>Conferir se a proposta já foi paga</strong>
+        <span>Verificar nas plataformas de pagamento <span class="mono" style="font-family:var(--mono);">Iugu</span> ou <span class="mono" style="font-family:var(--mono);">Vindi</span>. <em>API hoje falha em identificar pagamentos realizados — leads ficam "presos" em etapas incorretas.</em></span>
+      </li>
+      <li>
+        <strong>Verificar se outro vendedor já está em contato</strong>
+        <span>Consultar a planilha <strong>Database de IS</strong>. <em>Sem essa checagem, dois analistas atacam o mesmo lead — conflito frequente.</em></span>
+      </li>
+      <li>
+        <strong>Validar a etapa do lead no HubSpot</strong>
+        <span>Identificar se é Lead Simulação, Carrinho ou Checkout (ver §03). <em>HubSpot às vezes traz informação desatualizada ou duplicada.</em></span>
+      </li>
+    </ol>
+
+    <h3>Mensagem em massa via Zendesk · estado atual</h3>
+    <div class="callout green">
+      <div class="head">↳ Como funciona hoje</div>
+      <p>O time dispara em massa pelo Zendesk uma mensagem padrão para leads de abandono: <em>"Seguro de vida sem burocracia, vi que você não concluiu a contratação"</em>. Os clientes que respondem geram tickets. O analista então abre a planilha Database para identificar de quem é a responsabilidade — e só aí inicia o atendimento.</p>
+    </div>
+
+    <h3>Após a primeira tentativa</h3>
+    <ol class="steps">
+      <li>
+        <strong>Atualizar a Database</strong>
+        <span>Lançar status, objeção, conexão, fonte, dados da venda.</span>
+      </li>
+      <li>
+        <strong>Se for lead HubSpot, espelhar no CRM</strong>
+        <span>Mesmas informações da Database.</span>
+      </li>
+      <li>
+        <strong>Se a contratação avançar — registrar interação no HubSpot</strong>
+        <span>Para manter histórico do lead. <em>Histórico só é arquivado no HubSpot após o pagamento.</em></span>
+      </li>
+    </ol>
+
+    <h3>Após pagamento — comportamentos suspeitos</h3>
+    <div class="callout warn">
+      <div class="head">↳ Subir formulário de subscrição se</div>
+      <p style="display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:6px;">
+        <span style="font-size:13px;"><strong>!</strong> Cliente fala que quer contratar para outra pessoa</span>
+        <span style="font-size:13px;"><strong>!</strong> Finge ser outra pessoa</span>
+        <span style="font-size:13px;"><strong>!</strong> Faz perguntas muito específicas sobre eventos / doenças</span>
+        <span style="font-size:13px;"><strong>!</strong> Muda a resposta de alguma pergunta da DPS</span>
+        <span style="font-size:13px;"><strong>!</strong> Já teve proposta anterior recusada</span>
+      </p>
+      <p style="font-size:13px; margin-top:10px;"><em>Qualquer suspeita é válida. Processo de envio do formulário é inconsistente hoje — depende do julgamento do analista.</em></p>
+    </div>
+
+    <h3>Quadro de planilhas em uso</h3>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Planilha</th><th>Frequência</th><th>Dono</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">P1</td>
+          <td><strong>Database de IS</strong> — log diário (data, fonte, vendedor, status, objeção, conexão, dados de venda). Eixo central do controle de atribuição.</td>
+          <td>diária</td>
+          <td>3 analistas</td>
+          <td><span class="pill warn">manual · pivot</span></td>
+        </tr>
+        <tr>
+          <td class="mono">P2</td>
+          <td><strong>Vendas e Campanhas</strong> — histórico de performance + por canal</td>
+          <td>diária</td>
+          <td>Amanda</td>
+          <td><span class="pill warn">manual</span></td>
+        </tr>
+        <tr>
+          <td class="mono">P3</td>
+          <td><strong>Painel MonitoraAI — IS</strong> — notas e avaliação automática das interações</td>
+          <td>contínua</td>
+          <td>Sarah de Souza</td>
+          <td><span class="pill ok">automatizada</span></td>
+        </tr>
+        <tr>
+          <td class="mono">P4</td>
+          <td><strong>Critérios MonitoraAI — IS</strong> — modelo CX adaptado para Sales</td>
+          <td>configuração</td>
+          <td>Amanda + Jimmy</td>
+          <td><span class="pill new">em construção</span></td>
+        </tr>
+        <tr>
+          <td class="mono">P5</td>
+          <td><strong>Share of Voice</strong> — linha do tempo de iniciativas de marca</td>
+          <td>contínua</td>
+          <td>Amanda</td>
+          <td><span class="pill warn">manual</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px; color:var(--ink-soft); margin-top:6px;">Importante: o MonitoraAI <strong>já avalia interações de Inside Sales</strong> desde set/2025. O Dashboard de IS pode evoluir desse painel — não é produto novo do zero.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- §05 GARGALOS                             -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div class="section-num">05</div>
+    <h2>Os <span class="accent">gargalos</span> que doem</h2>
+  </div>
+  <div class="section-body">
+    <p class="lead">Mapeamento das dores reais — agrupadas em três blocos. Cada uma com evidência concreta.</p>
+
+    <div class="pains">
+      <div class="pain-group">
+        <h4>↳ Falta de integração entre sistemas</h4>
+        <ul class="pain-list">
+          <li><strong>HubSpot ↔ Zendesk não conversam</strong>Leads de WhatsApp não passam pelo HubSpot até virarem proposta.</li>
+          <li><strong>API falha em identificar pagamentos</strong>Lead pago aparece como pendente na Zendesk → analista perde tempo em proposta já fechada.</li>
+          <li><strong>Leads "presos" em etapas incorretas</strong>Status no HubSpot não acompanha realidade do lead.</li>
+          <li><strong>Mesmo cliente, múltiplas simulações</strong>Lead duplicado é regra, não exceção.</li>
+        </ul>
+      </div>
+
+      <div class="pain-group">
+        <h4>↳ Visibilidade limitada do analista</h4>
+        <ul class="pain-list">
+          <li><strong>Sem acesso completo à DPS</strong>Analista não vê as ~30 respostas — só o resultado agregado por cobertura.</li>
+          <li><strong>Origem do lead Zendesk = cego</strong>WhatsApp inbound não carrega UTM. 37 % do volume sem rastreamento.</li>
+          <li><strong>Histórico de simulações fragmentado</strong>Para o mesmo CPF, simulações ficam espalhadas entre BQ, HubSpot e Zendesk.</li>
+          <li><strong>Sem score / priorização</strong>Lead vai para qualquer analista pela ordem de chegada.</li>
+        </ul>
+      </div>
+
+      <div class="pain-group">
+        <h4>↳ Volume × capacidade</h4>
+        <ul class="pain-list">
+          <li><strong>~100 leads / dia para 3 analistas</strong>Razão estrutural de ~33 leads/analista/dia.</li>
+          <li><strong>Tempo de resposta WhatsApp · 9+ min</strong>Lead esfria nessa janela.</li>
+          <li><strong>Ciclo de venda de até uma semana</strong>Compromete recall e conversão.</li>
+          <li><strong>Conflito de atribuição</strong>Sem fila inteligente, dois analistas atacam o mesmo lead.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="head">↳ Conclusão · O ponto de pressão</div>
+      <p><strong>Tudo isso converge na planilha Database.</strong> Ela é o ponto único de verdade do time hoje — e o ponto único de falha. Qualquer atraso, conflito ou erro nela, é trabalho dobrado para o analista. Resolver IS começa por substituir a Database por uma fonte de dado viva.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- §06 STACK                                -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div class="section-num">06</div>
+    <h2>A <span class="accent">stack</span> em linguagem simples</h2>
+  </div>
+  <div class="section-body">
+    <p class="lead">Para conversar com qualquer interlocutor sobre as ferramentas que sustentam o fluxo. Essas são as peças.</p>
+
+    <div class="diagram">
+      <div class="diagram-caption">Padrão arquitetural confirmado em produção · MonitoraAI (set/2025)</div>
+      <svg viewBox="0 0 1000 180" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+        <defs>
+          <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#00875F"/>
+          </marker>
+        </defs>
+        <style>
+          .stk-title { font-family: 'Archivo', sans-serif; font-size: 16px; fill: #003F2D; font-weight: 800; letter-spacing: -0.01em; }
+          .stk-sub { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #6B7472; }
+          .stk-cap { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #00875F; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+        </style>
+        <rect x="40" y="60" width="170" height="70" rx="2" fill="#FFFFFF" stroke="#00875F" stroke-width="1.5"/>
+        <text x="125" y="92" class="stk-title" text-anchor="middle">Zendesk</text>
+        <text x="125" y="112" class="stk-sub" text-anchor="middle">trigger / fonte</text>
+        <rect x="280" y="60" width="170" height="70" rx="2" fill="#FFFFFF" stroke="#00875F" stroke-width="1.5"/>
+        <text x="365" y="92" class="stk-title" text-anchor="middle">n8n</text>
+        <text x="365" y="112" class="stk-sub" text-anchor="middle">orquestração · v1.123.5</text>
+        <rect x="520" y="60" width="170" height="70" rx="2" fill="#FFFFFF" stroke="#00875F" stroke-width="1.5"/>
+        <text x="605" y="92" class="stk-title" text-anchor="middle">OpenAI</text>
+        <text x="605" y="112" class="stk-sub" text-anchor="middle">LLM / análise</text>
+        <rect x="760" y="60" width="200" height="70" rx="2" fill="#FFFFFF" stroke="#00875F" stroke-width="1.5"/>
+        <text x="860" y="92" class="stk-title" text-anchor="middle">Sheets · BQ</text>
+        <text x="860" y="112" class="stk-sub" text-anchor="middle">persistência</text>
+        <line x1="210" y1="95" x2="278" y2="95" stroke="#00875F" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="450" y1="95" x2="518" y2="95" stroke="#00875F" stroke-width="1.5" marker-end="url(#arr)"/>
+        <line x1="690" y1="95" x2="758" y2="95" stroke="#00875F" stroke-width="1.5" marker-end="url(#arr)"/>
+        <text x="500" y="40" class="stk-cap" text-anchor="middle">Mesmo padrão pode ser replicado para BQ → Zendesk</text>
+      </svg>
+    </div>
+
+    <div class="stack-item">
+      <div class="stack-name">Zendesk<span class="role">Mesa de trabalho</span></div>
+      <div class="stack-desc">
+        Sistema onde o analista de IS vê os clientes, conversa e fecha venda. Tudo é registrado: mensagens, ligações, status, tickets.
+        <span class="analogy">↳ Pense num "WhatsApp profissional" misturado com agenda do cliente. É a mesa do analista.</span>
+      </div>
+    </div>
+
+    <div class="stack-item">
+      <div class="stack-name">HubSpot<span class="role">Caderno de leads</span></div>
+      <div class="stack-desc">
+        CRM — guarda a "ficha" de cada lead que chegou pelo formulário. Quem é, contato, campanha de origem, etapa do funil.
+        <span class="analogy">↳ Agenda de contatos super inteligente que lembra de tudo que aconteceu com cada pessoa.</span>
+      </div>
+    </div>
+
+    <div class="stack-item">
+      <div class="stack-name">BigQuery<span class="role">Caixa-preta de tudo</span></div>
+      <div class="stack-desc">
+        Banco de dados gigante do Google. Registra cada clique, cada simulação, cada abandono. Fonte do dado bruto.
+        <span class="analogy">↳ Câmera invisível que grava tudo no site e guarda em planilha-mãe. Quem sabe perguntar (em SQL) consegue qualquer dado.</span>
+      </div>
+    </div>
+
+    <div class="stack-item">
+      <div class="stack-name">n8n<span class="role">Encanador automático</span></div>
+      <div class="stack-desc">
+        Conecta sistemas <em>sem precisar programar</em>. Você desenha visualmente: "quando entrar lead novo no HubSpot, copia para o Zendesk e avisa no Slack". Cada caixinha é um sistema, cada seta é uma regra. <strong>Já em produção na Azos via MonitoraAI.</strong>
+        <span class="analogy">↳ É o encanamento entre as caixas-d'água. Não estaríamos inventando — estaríamos reaproveitando.</span>
+      </div>
+    </div>
+
+    <div class="stack-item">
+      <div class="stack-name">OpenAI · LLM<span class="role">Inteligência que lê e escreve</span></div>
+      <div class="stack-desc">
+        Mesma família do ChatGPT. Lê texto, classifica, resume, responde. No MonitoraAI lê cada conversa e dá nota.
+        <span class="analogy">↳ Um analista júnior infinito. Não cansa, não erra de humor — mas precisa de instrução clara.</span>
+      </div>
+    </div>
+
+    <div class="stack-item">
+      <div class="stack-name">Iugu · Vindi<span class="role">Plataformas de pagamento</span></div>
+      <div class="stack-desc">
+        Onde o pagamento da apólice é processado. Hoje a API que conecta com a Zendesk falha em informar pagamentos realizados — daí leads "presos".
+        <span class="analogy">↳ A maquininha de cartão. Pagou ali, mas a notícia não chega na mesa do analista.</span>
+      </div>
+    </div>
+
+    <div class="stack-item">
+      <div class="stack-name">Clicksign<span class="role">Assinatura digital</span></div>
+      <div class="stack-desc">
+        Onde o cliente assina digitalmente a proposta. No estágio Lead Checkout, é nela que o analista verifica se a assinatura já foi feita.
+        <span class="analogy">↳ A caneta digital. Sem ela, o lead chega só "quase fechado".</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- §07 PROPOSTA                             -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div class="section-num">07</div>
+    <h2>Proposta de <span class="accent">divisão</span></h2>
+  </div>
+  <div class="section-body">
+    <p class="lead">Como atacar — quem entrega o quê. Esta é a leitura para discutir e fechar na reunião.</p>
+
+    <div class="split">
+      <div class="split-side tech">
+        <div class="tag-strip">Time Giovanni · Técnico</div>
+        <h5>Onde a IA atua direto.</h5>
+        <ul>
+          <li><strong>Chatbot fora do horário do time</strong>Atende leads em janelas em que o time não está disponível: noite, fim de semana, feriados, férias. Quando o time volta, entrega o histórico para o analista assumir.</li>
+          <li><strong>Sistema de mensagens ativas</strong>Mensagem imediata após abandono de carrinho. Janela curta de recuperação antes do lead esfriar — entra como "delivery 0", pequena em escopo, alta em retorno.</li>
+        </ul>
+      </div>
+      <div class="split-side lucas">
+        <div class="tag-strip">Growth · Lucas</div>
+        <h5>Onde os dados destravam o time.</h5>
+        <ul>
+          <li><strong>Unificação de leads em local único</strong>BQ + HubSpot + Zendesk → uma fonte de verdade. Resolve duplicação, leads presos e conflito de atribuição.</li>
+          <li><strong>Fila inteligente de atribuição</strong>Distribuição baseada em canal, valor da simulação e etapa de abandono — não mais "primeiro disponível".</li>
+          <li><strong>Dashboard de análise</strong>Tempo de atendimento, objeções, taxa de conexão, prêmio por canal/analista. Pode evoluir em cima do painel MonitoraAI já existente.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <div class="head">↳ Sequência sugerida</div>
+      <p><strong>1.</strong> Mensagem ativa de carrinho (técnico, escopo curto, ROI alto) &nbsp; <strong>2.</strong> Unificação de leads (Lucas, destrava todo o resto) &nbsp; <strong>3.</strong> Dashboard (Lucas, em cima do MonitoraAI) &nbsp; <strong>4.</strong> Fila inteligente (Lucas, depende da unificação) &nbsp; <strong>5.</strong> Chatbot fora do horário (técnico, depende da fila para handoff).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- §08 PARA DISCUTIR                        -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div class="section-num">08</div>
+    <h2>Para <span class="accent">discutir</span> na reunião</h2>
+  </div>
+  <div class="section-body">
+    <p class="lead">Pontos que precisam de decisão ou alinhamento técnico. Lista para conduzir a conversa.</p>
+
+    <h3>Decisões de produto</h3>
+    <ol class="questions">
+      <li>
+        <strong>Mensagem ativa de carrinho — qual canal e qual gatilho exato?</strong>
+        <span>WhatsApp via API oficial? E-mail? Tempo de espera após abandono? Quem aprova o copy?</span>
+      </li>
+      <li>
+        <strong>Chatbot fora do horário — escopo da fase 1?</strong>
+        <span>Coleta de dados básicos? Tira dúvida de cobertura? Faz simulação? Quanto vai longe antes de "esperar o time voltar"?</span>
+      </li>
+      <li>
+        <strong>Mensagem ativa precisa entrar antes da unificação ou pode rodar paralela?</strong>
+        <span>Define se é entrega independente ou se depende de pré-trabalho de dados.</span>
+      </li>
+    </ol>
+
+    <h3>Dependências técnicas</h3>
+    <ol class="questions">
+      <li>
+        <strong>API Iugu/Vindi — quem é o owner do bug de "leads presos"?</strong>
+        <span>É problema do core ou da integração com Zendesk? Tem ticket aberto?</span>
+      </li>
+      <li>
+        <strong>Acesso a respostas detalhadas da DPS — limitação técnica ou de produto?</strong>
+        <span>Se for só permissão, podemos destravar rápido. Se for arquitetura, vira projeto.</span>
+      </li>
+      <li>
+        <strong>Existe instância n8n compartilhada onde o MonitoraAI roda?</strong>
+        <span>Para reaproveitar credenciais, padrões e nodes já configurados.</span>
+      </li>
+      <li>
+        <strong>Tabela canônica do BQ — qual é a verdade do prêmio B2C?</strong>
+        <span>Ver alerta em §01. Antes do dashboard, fechar com dados.</span>
+      </li>
+    </ol>
+
+    <h3>Sobre o time de IS</h3>
+    <ol class="questions">
+      <li>
+        <strong>Posso passar uma hora ao lado de Daniel, Hugo ou Gabriel?</strong>
+        <span>Validação direta do fluxo antes de qualquer linha de código de unificação.</span>
+      </li>
+      <li>
+        <strong>Quem do time de IS é o melhor par para validar regras de fila inteligente?</strong>
+        <span>Quem sente a dor de atribuição na pele todo dia.</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- CHECKLIST                                -->
+<!-- ═══════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div class="section-num">09</div>
+    <h2>Antes da <span class="accent">reunião</span></h2>
+  </div>
+  <div class="section-body">
+    <ul class="checklist">
+      <li>Confirmar com Amanda quem participa da reunião do time Giovanni</li>
+      <li>Imprimir / abrir este doc + a apresentação operacional do Inside Sales</li>
+      <li>Ter ao alcance: Database de IS, painel MonitoraAI, deck de onboarding 28/04</li>
+      <li>Reler §07 e §08 — chegar com proposta e perguntas no topo da cabeça</li>
+      <li>Pedir 1h ao lado de um analista IS nesta semana ou na próxima</li>
+      <li>Conferir com Sarah o que o MonitoraAI já produz para IS antes de pensar em dashboard novo</li>
+      <li>Levantar ticket aberto de "API Iugu/Vindi · pagamentos" — se existir</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <span class="left">A &nbsp; INSIDE SALES · BRIEFING · 30 ABR 2026 · v3</span>
+  <span>FONTES · APRESENTAÇÃO B2C · REUNIÃO AMANDA 30/04 · SLACK · WIKI INTERNA</span>
+</footer>
+
+</div>
+</body>
+</html>
